@@ -6,7 +6,11 @@ module.exports = function(app) {
     });
 
     app.get('/books', (req, res) => {
-        res.render()
+        res.render('books-index');
+    })
+
+    app.get('/books/:category', (req, res) => {
+        res.render('books-index');
     })
 
 }
