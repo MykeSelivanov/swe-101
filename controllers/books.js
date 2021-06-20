@@ -1,7 +1,7 @@
 module.exports = function(app) {
 
     // Get home route
-    app.get('/', (req,res) => {
+    app.get('/', (req, res) => {
         res.render('main-index');
     });
 
@@ -10,6 +10,8 @@ module.exports = function(app) {
         res.render('books-index');
     });
 
-    
+    app.get('/books/new', (req, res) => {
+        res.render('books-form');
+    });
 
 }
