@@ -1,16 +1,15 @@
 module.exports = function(app) {
 
-    // get home route
+    // Get home route
     app.get('/', (req,res) => {
         res.render('main-index');
     });
 
+    // Boooks index route
     app.get('/books', (req, res) => {
         res.render('books-index');
-    })
+    });
 
-    app.get('/books/:category', (req, res) => {
-        res.render('books-index');
-    })
+    
 
 }
