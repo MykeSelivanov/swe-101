@@ -1,44 +1,40 @@
-<form class="row g-3">
+
   <div class="col-md-6">
-    <label for="inputEmail4" class="form-label">Email</label>
-    <input type="email" class="form-control" id="inputEmail4">
+    <label for="inputTitle" class="form-label">Title</label>
+    <input type="text" class="form-control" id="inputTitle" name="title" value="{{book.title}}" required>
   </div>
   <div class="col-md-6">
-    <label for="inputPassword4" class="form-label">Password</label>
-    <input type="password" class="form-control" id="inputPassword4">
+    <label for="inputAuthors" class="form-label">Authors</label>
+    <input type="text" class="form-control" id="inputAuthors" name="authors" value="{{book.authors}}" required>
   </div>
   <div class="col-12">
-    <label for="inputAddress" class="form-label">Address</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+    <label for="inputImageLink" class="form-label">Image link</label>
+    <input type="text" class="form-control" id="inputImageLink" name="imageLink" value="{{book.imageLink}}" placeholder="https://your-book-image-link.com/images/12345.jpg" required>
   </div>
   <div class="col-12">
-    <label for="inputAddress2" class="form-label">Address 2</label>
-    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-  </div>
-  <div class="col-md-6">
-    <label for="inputCity" class="form-label">City</label>
-    <input type="text" class="form-control" id="inputCity">
+    <label for="inputDescription" class="form-label">Description</label>
+    <textarea type="text" class="form-control" id="inputDescription" rows="5" placeholder="Short Description" name="description" required>{{book.description}}</textarea>
   </div>
   <div class="col-md-4">
-    <label for="inputState" class="form-label">State</label>
-    <select id="inputState" class="form-select">
-      <option selected>Choose...</option>
-      <option>...</option>
+    <label for="inputCategory" class="form-label">Category</label>
+    <select id="inputCategory" class="form-select" name="category" value="{{book.category}}" required>
+      <option value="Languages" selected>Languages</option>
+      <option value="Frameworks">Frameworks</option>
+      <option value="Data Structures & Algorithms">Data Structures & Algorithms</option>
+      <option value="Design Patterns">Design Patterns</option>
+      <option value="System Design">System Design</option>
+    </select>  
+  </div>
+  <div class="col-md-4">
+    <label for="inputLevel" class="form-label">Level</label>
+    <select id="inputLevel" class="form-select" name="level" value="{{book.level}}" required>
+      <option value="All levels" selected>All levels</option>
+      <option value="Junior">Junior</option>
+      <option value="Middle">Middle</option>
+      <option value="Senior">Senior</option>
     </select>
   </div>
-  <div class="col-md-2">
-    <label for="inputZip" class="form-label">Zip</label>
-    <input type="text" class="form-control" id="inputZip">
+  <div class="col-md-4">
+    <label for="inputYear" class="form-label">Year</label>
+    <input type="text" class="form-control" id="inputYear" placeholder="2021" name="year" maxlength="4" pattern="\d{4}" value="{{book.year}}" required>
   </div>
-  <div class="col-12">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
-      <label class="form-check-label" for="gridCheck">
-        Check me out
-      </label>
-    </div>
-  </div>
-  <div class="col-12">
-    <button type="submit" class="btn btn-primary">Sign in</button>
-  </div>
-</form>
