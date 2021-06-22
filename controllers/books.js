@@ -1,3 +1,5 @@
+const Book = require("../models/book");
+
 module.exports = function(app) {
 
     // Get home route
@@ -11,7 +13,21 @@ module.exports = function(app) {
     });
 
     app.get('/books/new', (req, res) => {
-        res.render('books-form');
+        res.render('books-new');
+    });
+
+    // Create new book
+    app.post('/books/new', (req, res) => {
+        console.log(req.body);
+        const book = new Book(req.body);
+        book
+            .save()
+            .then(() => {
+                return res.redirect('/books');
+            })
+        .catch((err) => {
+            console.log(err.message);
+        });
     });
 
 }
