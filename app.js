@@ -9,9 +9,8 @@ const cookieParser = require('cookie-parser');
 // environment variables
 require('dotenv').config();
 
-// body parser
-const bodyParser = require('body-parser');
-app.use(bodyParser.urlencoded({ extended: true }), methodOverride('_method'));
+app.use(express.json());
+app.use(express.urlencoded({extended: true}), methodOverride('_method') );
 
 const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access');
 
