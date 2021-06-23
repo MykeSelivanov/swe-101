@@ -7,9 +7,16 @@ module.exports = function(app) {
         res.render('main-index');
     });
 
-    // Boooks index route
-    app.get('/books', (req, res) => {
-        res.render('books-index');
+    // Boooks index route - show all books
+    app.get('/books/all', (req, res) => {
+
+        Book.find()
+            .then(books => {
+                res.render('books-index', { books });
+            })
+            .catch(err => {
+                console.log(err);
+            });
     });
 
     app.get('/books/new', (req, res) => {
@@ -23,7 +30,7 @@ module.exports = function(app) {
         book
             .save()
             .then(() => {
-                return res.redirect('/books');
+                return res.redirect('/books/all');
             })
         .catch((err) => {
             console.log(err.message);
