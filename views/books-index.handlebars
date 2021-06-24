@@ -1,6 +1,7 @@
 <ul class="nav nav-fill">
   <li class="nav-item">
-    <a class="nav-link text-dark" aria-current="page" href="#">All books</a>
+    {{!-- <a class="nav-link text-dark" aria-current="page" href="#">All books</a> --}}
+    <a class="nav-link text-dark" aria-current="page" href="books/?category=all">All books</a>
   </li>
   <li class="nav-item">
     <a class="nav-link text-dark" href="#">Languages</a>
@@ -24,14 +25,14 @@
 
 <div class="row">
     {{#each books}}
-        <div class="col-sm-4 d-flex align-items-stretch">
-            <div class="card text-center m-2">
+        <div class="col-sm-4 d-flex align-items-stretch" style="border: 1px solid;">
+            <div class="card text-center m-2" style="border:  1px solid red;">
                 <img class="card-img-top mt-3" src="{{this.imageLink}}" alt="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDn6TsJeyk7Vt1yYwjytV3slqOpU4r3e0Ncg&usqp=CAU">
-                <div class="card-body">
+                <div class="card-body" style="border:  1px solid green; d-flex" style="min-height: 200px;">
                     <h5 class="card-title">{{this.title}}</h5>
                     <h6 class="card-subtitle mb-2 text-muted">{{this.authors}}</h6>
                     <p class="card-text">{{this.description}}</p>
-                    <a href="#" class="btn btn-outline-secondary">Open book review</a>
+                    <a href="#" class="btn btn-outline-secondary" style="align-self: flex-end;">Open book review</a>
                 </div>
             </div>
         </div>
