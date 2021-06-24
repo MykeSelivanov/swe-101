@@ -1,3 +1,4 @@
+const { realpathSync } = require("fs");
 const Book = require("../models/book");
 
 module.exports = function(app) {
@@ -8,8 +9,15 @@ module.exports = function(app) {
     });
 
     // Boooks index route - show all books
-    app.get('/books/all', (req, res) => {
-
+    app.get('/books', (req, res) => {
+        // query parameter vs params
+        const param = req.query.category;
+        // if(param  === 'all') {
+        //     // send all books
+        // req.render('index')
+        // } else if(param === 'algorithm') {
+            Book.find({ category: param})
+        // }
         Book.find()
             .then(books => {
                 res.render('books-index', { books });
