@@ -12,19 +12,25 @@ module.exports = function(app) {
     app.get('/books', (req, res) => {
         // query parameter vs params
         const param = req.query.category;
-        // if(param  === 'all') {
-        //     // send all books
-        // req.render('index')
-        // } else if(param === 'algorithm') {
-            Book.find({ category: param})
-        // }
-        Book.find()
+        console.log(param);
+        if(param  === undefined) {
+            Book.find()
             .then(books => {
                 res.render('books-index', { books });
             })
             .catch(err => {
                 console.log(err);
             });
+        } else {
+            Book.find({ category: param})
+            .then(books => {
+                console.log(books)
+                res.render('books-index', { books });
+            })
+            .catch(err => {
+                console.log(err);
+            });
+        }
     });
 
     app.get('/books/new', (req, res) => {
@@ -38,7 +44,7 @@ module.exports = function(app) {
         book
             .save()
             .then(() => {
-                return res.redirect('/books/all');
+                return res.redirect('/books');
             })
         .catch((err) => {
             console.log(err.message);
