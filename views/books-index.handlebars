@@ -1,22 +1,22 @@
 <ul class="nav nav-fill">
   <li class="nav-item">
     {{!-- <a class="nav-link text-dark" aria-current="page" href="#">All books</a> --}}
-    <a class="nav-link text-dark" aria-current="page" href="books/?category=all">All books</a>
+    <a class="nav-link text-dark" aria-current="page" href="/books/?category=all">All books</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link text-dark" href="books/?category=Languages">Languages</a>
+    <a class="nav-link text-dark" href="/books/?category=Languages">Languages</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link text-dark" href="books/?category=Frameworks">Frameworks</a>
+    <a class="nav-link text-dark" href="/books/?category=Frameworks">Frameworks</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link text-dark" href="books/?category=Data Structures & Algorithms">Data Structures & Algorithms</a>
+    <a class="nav-link text-dark" href="/books/?category=Data Structures & Algorithms">Data Structures & Algorithms</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link text-dark" href="books/?category=Design Patterns">Design Patterns</a>
+    <a class="nav-link text-dark" href="/books/?category=Design Patterns">Design Patterns</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link text-dark" href="books/?category=System Design">System Design</a>
+    <a class="nav-link text-dark" href="/books/?category=System Design">System Design</a>
   </li>
   <li class="nav-item">
     <a class="nav-link text-secondary" href="/books/new">+Add a book</a>
@@ -34,7 +34,7 @@
                     <div class="progress m-2">
                         <div class="progress-bar progress-bar-striped bg-secondary" role="progressbar" style="width: 10%" aria-valuenow="7" aria-valuemin="0" aria-valuemax="10"></div>
                     </div>
-                    <a href="#" class="btn btn-outline-secondary mt-3" style="align-self: flex-end;">Open book review</a>
+                    <a href="/books/{{this.id}}" class="btn btn-outline-secondary mt-3" style="align-self: flex-end;">Open book review</a>
                 </div>
             </div>
         </div>
